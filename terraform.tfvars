@@ -19,4 +19,4 @@ key_file             = "Sanchit3.pem"
 public_ec2_name      = "redis_publicec2"
 private_ec2_name     = ["redis_privateec1", "redis_privateec2","redis_privateec3"]
 zone = "ap-south-1a"
-zones = ["ap-south-1a","ap-south-1b","ap-south-1c"]
+zones = ["ap-south-1a","ap-south-1b"]
