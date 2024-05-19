@@ -1,4 +1,4 @@
-variable "opensearch_publicsubnet" {
+variable "redis_publicsubnet" {
     type = string
   
 }
