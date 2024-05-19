@@ -1,11 +1,11 @@
-resource "aws_security_group" "opensearch_publicsg" {
+resource "aws_security_group" "redis_publicsg" {
   name        = var.sg_publicname
   description = "Allow port 5601 from my ip only"
   vpc_id      = var.vpc_id
 
   ingress {
-    from_port   = 5601
-    to_port     = 5601
+    from_port   = 6379
+    to_port     = 6379
     protocol    = "tcp"
     cidr_blocks = ["${var.my_ip}/32"]
   }
@@ -27,7 +27,7 @@ resource "aws_security_group" "opensearch_publicsg" {
 }
 
 
-resource "aws_security_group" "opensearch_privatesg" {
+resource "aws_security_group" "redis_privatesg" {
   name        = var.sg_privatename
   description = "Allow port 8080 form my ip only"
   vpc_id      = var.vpc_id
