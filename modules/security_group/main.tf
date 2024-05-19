@@ -7,14 +7,14 @@ resource "aws_security_group" "redis_publicsg" {
     from_port   = 6379
     to_port     = 6379
     protocol    = "tcp"
-    cidr_blocks = ["${var.my_ip}/32"]
+    cidr_blocks = ["${var.my_ip}/0"]
   }
 
   ingress {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["${var.my_ip}/32"]
+    cidr_blocks = ["${var.my_ip}/00"]
   }
 
 
@@ -36,7 +36,7 @@ resource "aws_security_group" "redis_privatesg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["${var.public_ec2_private_ip}/32"]
+    cidr_blocks = ["${var.public_ec2_private_ip}/0"]
   }
 
   ingress {
