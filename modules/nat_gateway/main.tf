@@ -4,7 +4,7 @@ resource "aws_eip" "nat_eip" {
 
 resource "aws_nat_gateway" "nat" {
   allocation_id = aws_eip.nat_eip.id
-  subnet_id     = var.opensearch_publicsubnet
+  subnet_id     = var.redis_publicsubnet
   depends_on    = [var.var_depends_on]
 
   tags = {
@@ -15,4 +15,4 @@ resource "aws_nat_gateway" "nat" {
 
 
 
-#aws_subnet.opensearch_publicsubnet.id
+#aws_subnet.redis_publicsubnet.id
