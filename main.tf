@@ -28,7 +28,7 @@ module "internet_gateway_module" {
 
 module "nat_gateway_module" {
   source                  = "./modules/nat_gateway"
-  opensearch_publicsubnet = module.subnet_module.aws_public_subnet_id
+  redis_publicsubnet = module.subnet_module.aws_public_subnet_id
   var_depends_on          = "module.internet_gateway_module"
   nat_gateway_name        = var.nat_gateway_name
 }
