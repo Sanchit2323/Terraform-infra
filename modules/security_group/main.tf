@@ -36,7 +36,7 @@ resource "aws_security_group" "redis_privatesg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["${var.public_ec2_private_ip}/0"]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
